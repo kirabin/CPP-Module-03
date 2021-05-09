@@ -1,6 +1,7 @@
 #include "FragTrap.hpp"
 
-int main(int argc, char const *argv[])
+// clang++ -Wall -Wextra -Werror FragTrap.cpp main.cpp
+int main()
 {
 	FragTrap	fragTrap("Frogy");
 

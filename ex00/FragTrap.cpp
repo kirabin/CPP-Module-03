@@ -34,21 +34,19 @@ FragTrap&	FragTrap::operator =(const FragTrap& other) {
 }
 
 void		FragTrap::rangedAttack(const string& target) const {
-	// TODO: make funny messages for bonus
 	cout << "FR4G-TP " <<  this->_name;
 	cout << " attacks " << target << " at range, ";
 	cout << "causing " << this->_rangedDamage << " points of damage!" << endl;
 }
 
 void		FragTrap::meleeAttack(const string& target) const {
-	// TODO: make funny messages for bonus
 	cout << "FR4G-TP " <<  this->_name;
 	cout << " attacks " << target << " at melee, ";
 	cout << "causing " << this->_meleeDamage << " points of damage!" << endl;
 }
 
 void		FragTrap::vaulthunter_dot_exe(const string& target){
-	int	cost = 25;
+	unsigned int	cost = 25;
 	int	choice = rand() % 2;
 
 	if (this->_energyPoints >= cost) {
