@@ -62,7 +62,6 @@ void		FragTrap::vaulthunter_dot_exe(const string& target){
 	}
 }
 
-// TODO: compile with -Wall -Wextra -Werror
 void		FragTrap::takeDamage(unsigned int amount) {
 	cout << "FR4G-TP " <<  this->_name;
 	if (amount > this->_hitPoints) {

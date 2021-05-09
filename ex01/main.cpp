@@ -1,9 +1,11 @@
 #include "FragTrap.hpp"
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
-int main(int argc, char const *argv[])
+// clang++ -Wall -Wextra -Werror FragTrap.cpp ScavTrap.cpp main.cpp
+int main()
 {
 	FragTrap	fragTrap("Frogy");
+	ScavTrap	scavTrap("Scavoir");
 
 	srand(time(NULL));
 	fragTrap.vaulthunter_dot_exe("Spider");
@@ -15,5 +17,15 @@ int main(int argc, char const *argv[])
 	fragTrap.takeDamage(23);
 	fragTrap.beRepaired(10);
 	fragTrap.takeDamage(23);
+
+	scavTrap.challengeNewcomer();
+	scavTrap.challengeNewcomer();
+	scavTrap.challengeNewcomer();
+	scavTrap.challengeNewcomer();
+	scavTrap.takeDamage(94);
+	scavTrap.takeDamage(23);
+	scavTrap.beRepaired(10);
+	scavTrap.takeDamage(23);
+
 	return 0;
 }

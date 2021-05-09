@@ -24,10 +24,10 @@ class FragTrap {
 		void		beRepaired(unsigned int amount);
 
 	private:
-		int		_hitPoints;
-		int		_maxHitPoints;
-		int		_energyPoints;
-		int		_maxEnergyPoints;
+		unsigned int		_hitPoints;
+		unsigned int		_maxHitPoints;
+		unsigned int		_energyPoints;
+		unsigned int		_maxEnergyPoints;
 		int		_level;
 		string	_name;
 		int		_meleeDamage;

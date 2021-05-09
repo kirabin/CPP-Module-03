@@ -16,5 +16,7 @@ int main()
 	fragTrap.beRepaired(10);
 	fragTrap.takeDamage(23);
 
+
+
 	return 0;
 }
