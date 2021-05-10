@@ -1,11 +1,14 @@
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
+#include "NinjaTrap.hpp"
 
-// clang++ -Wall -Wextra -Werror FragTrap.cpp ScavTrap.cpp ClapTrap.cpp main.cpp
+// clang++ -Wall -Wextra -Werror NinjaTrap.cpp FragTrap.cpp ScavTrap.cpp ClapTrap.cpp main.cpp
 int main()
 {
+	ClapTrap	clapTrap("Clappy");
 	FragTrap	fragTrap("Frogy");
 	ScavTrap	scavTrap("Scavoir");
+	NinjaTrap	ninjaTrap("Ninger");
 
 	srand(time(NULL));
 	fragTrap.vaulthunter_dot_exe("Spider");
@@ -26,6 +29,15 @@ int main()
 	scavTrap.takeDamage(23);
 	scavTrap.beRepaired(10);
 	scavTrap.takeDamage(23);
+
+	ninjaTrap.ninjaShoebox(scavTrap);
+	ninjaTrap.ninjaShoebox(clapTrap);
+	ninjaTrap.ninjaShoebox(fragTrap);
+	ninjaTrap.ninjaShoebox(ninjaTrap);
+	ninjaTrap.takeDamage(94);
+	ninjaTrap.takeDamage(23);
+	ninjaTrap.beRepaired(10);
+	ninjaTrap.takeDamage(23);
 
 	return 0;
 }

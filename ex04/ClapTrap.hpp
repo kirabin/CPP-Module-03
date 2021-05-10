@@ -21,6 +21,7 @@ class ClapTrap {
 		void		meleeAttack(const string& target) const;
 		void		takeDamage(unsigned int amount);
 		void		beRepaired(unsigned int amount);
+		string		getName() const;
 
 	protected:
 		unsigned int		_hitPoints;

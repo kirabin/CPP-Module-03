@@ -21,6 +21,10 @@ ClapTrap::~ClapTrap() {
 
 }
 
+string		ClapTrap::getName() const {
+	return this->_name;
+}
+
 ClapTrap&	ClapTrap::operator =(const ClapTrap& other) {
 	this->_name = other._name;
 	return *this;

@@ -4,7 +4,8 @@
 # include "ScavTrap.hpp"
 # include "FragTrap.hpp"
 
-class NinjaTrap : public ClapTrap {
+// TODO: don't forget about reverse destructors
+class NinjaTrap : public NinjaTrap {
 
 	public:
 		NinjaTrap(string name);
