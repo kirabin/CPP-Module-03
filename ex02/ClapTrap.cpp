@@ -1,6 +1,6 @@
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(string name) {
+ClapTrap::ClapTrap(std::string name) {
 	this->_name = name;
 	this->_model = "CL4P-TP";
 	this->_hitPoints = 100;
@@ -14,54 +14,52 @@ ClapTrap::ClapTrap(string name) {
 }
 
 ClapTrap::ClapTrap(const ClapTrap& other) {
-	*this = other;
+	this->_name = other._name;
 }
 
-ClapTrap::~ClapTrap() {
-
-}
+ClapTrap::~ClapTrap() {}
 
 ClapTrap&	ClapTrap::operator =(const ClapTrap& other) {
 	this->_name = other._name;
 	return *this;
 }
 
-void		ClapTrap::rangedAttack(const string& target) const {
-	cout << this->_model << " " <<  this->_name;
-	cout << " attacks " << target << " at range, ";
-	cout << "causing " << this->_rangedDamage << " points of damage!" << endl;
+void		ClapTrap::rangedAttack(const std::string& target) const {
+	std::cout << this->_model << " " <<  this->_name;
+	std::cout << " attacks " << target << " at range, ";
+	std::cout << "causing " << this->_rangedDamage << " points of damage!" << std::endl;
 }
 
-void		ClapTrap::meleeAttack(const string& target) const {
-	cout << this->_model << " " <<  this->_name;
-	cout << " attacks " << target << " at melee, ";
-	cout << "causing " << this->_meleeDamage << " points of damage!" << endl;
+void		ClapTrap::meleeAttack(const std::string& target) const {
+	std::cout << this->_model << " " <<  this->_name;
+	std::cout << " attacks " << target << " at melee, ";
+	std::cout << "causing " << this->_meleeDamage << " points of damage!" << std::endl;
 }
 
 
 void		ClapTrap::takeDamage(unsigned int amount) {
-	cout << this->_model << " " <<  this->_name;
+	std::cout << this->_model << " " <<  this->_name;
 	if (amount > this->_hitPoints) {
-		cout << " got " << this->_hitPoints << " damage.";
+		std::cout << " got " << this->_hitPoints << " damage.";
 		this->_hitPoints = 0;
 	}
 	else {
-		cout << " got " << amount << " damage.";
+		std::cout << " got " << amount << " damage.";
 		this->_hitPoints -= amount;
 	}
-	cout << endl << "\tHealth: " << this->_hitPoints << endl;
+	std::cout << std::endl << "\tHealth: " << this->_hitPoints << std::endl;
 }
 
 void		ClapTrap::beRepaired(unsigned int amount) {
-	cout << this->_model << " " <<  this->_name;
-	cout << " repaired ";
+	std::cout << this->_model << " " <<  this->_name;
+	std::cout << " repaired ";
 	if (amount + this->_hitPoints > this->_maxHitPoints) {
-		cout << this->_maxHitPoints - this->_hitPoints << " health.";
+		std::cout << this->_maxHitPoints - this->_hitPoints << " health.";
 		this->_hitPoints = this->_maxHitPoints;
 	}
 	else {
-		cout << amount << " health.";
+		std::cout << amount << " health.";
 		this->_hitPoints += amount;
 	}
-	cout << endl << "\tHealth: " << this->_hitPoints << endl;
+	std::cout << std::endl << "\tHealth: " << this->_hitPoints << std::endl;
 }

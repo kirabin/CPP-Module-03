@@ -24,12 +24,12 @@ class FragTrap {
 		unsigned int		_maxHitPoints;
 		unsigned int		_energyPoints;
 		unsigned int		_maxEnergyPoints;
-		int		_level;
-		std::string	_name;
-		int		_meleeDamage;
-		int		_rangedDamage;
-		int		_armor;
-		static std::string messages[5];
+		int					_level;
+		std::string			_name;
+		int					_meleeDamage;
+		int					_rangedDamage;
+		int					_armor;
+		static std::string	messages[5];
 };
 
 #endif

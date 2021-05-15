@@ -21,15 +21,29 @@ ScavTrap::ScavTrap(std::string name) {
 }
 
 ScavTrap::ScavTrap(const ScavTrap& other) {
-	*this = other;
+	this->_name = other._name;
+	this->_hitPoints = other._hitPoints;
+	this->_energyPoints = other._energyPoints;
+	this->_maxHitPoints = other._maxHitPoints;
+	this->_maxEnergyPoints = other._maxEnergyPoints;
+	this->_level = other._level;
+	this->_meleeDamage = other._meleeDamage;
+	this->_rangedDamage = other._rangedDamage;
+	this->_armor = other._armor;
 }
 
-ScavTrap::~ScavTrap() {
-
-}
+ScavTrap::~ScavTrap() {}
 
 ScavTrap&	ScavTrap::operator =(const ScavTrap& other) {
 	this->_name = other._name;
+	this->_hitPoints = other._hitPoints;
+	this->_energyPoints = other._energyPoints;
+	this->_maxHitPoints = other._maxHitPoints;
+	this->_maxEnergyPoints = other._maxEnergyPoints;
+	this->_level = other._level;
+	this->_meleeDamage = other._meleeDamage;
+	this->_rangedDamage = other._rangedDamage;
+	this->_armor = other._armor;
 	return *this;
 }
 

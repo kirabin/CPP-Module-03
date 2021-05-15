@@ -5,34 +5,30 @@
 # include <cstdlib>
 # include <ctime>
 
-using std::string;
-using std::cout;
-using std::endl;
-
 class ClapTrap {
 
 	public:
-		ClapTrap(string name);
+		ClapTrap(std::string name);
 		ClapTrap(const ClapTrap& other);
 		~ClapTrap();
 
 		ClapTrap&	operator =(const ClapTrap& other);
-		void		rangedAttack(const string& target) const;
-		void		meleeAttack(const string& target) const;
+		void		rangedAttack(const std::string& target) const;
+		void		meleeAttack(const std::string& target) const;
 		void		takeDamage(unsigned int amount);
 		void		beRepaired(unsigned int amount);
 
 	protected:
-		unsigned int		_hitPoints;
-		unsigned int		_maxHitPoints;
-		unsigned int		_energyPoints;
-		unsigned int		_maxEnergyPoints;
-		int		_level;
-		string	_name;
-		string	_model;
-		int		_meleeDamage;
-		int		_rangedDamage;
-		int		_armor;
+		unsigned int	_hitPoints;
+		unsigned int	_maxHitPoints;
+		unsigned int	_energyPoints;
+		unsigned int	_maxEnergyPoints;
+		int				_level;
+		std::string		_name;
+		std::string		_model;
+		int				_meleeDamage;
+		int				_rangedDamage;
+		int				_armor;
 };
 
 #endif

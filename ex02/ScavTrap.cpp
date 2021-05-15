@@ -22,7 +22,7 @@ ScavTrap::ScavTrap(string name) : ClapTrap(name) {
 }
 
 ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other._name) {
-	*this = other;
+	this->_name = other._name;
 }
 
 ScavTrap::~ScavTrap() {
@@ -30,7 +30,6 @@ ScavTrap::~ScavTrap() {
 }
 
 ScavTrap&	ScavTrap::operator =(const ScavTrap& other) {
-	// TODO: why make copy instead of reference?
 	this->_name = other._name;
 	return *this;
 }

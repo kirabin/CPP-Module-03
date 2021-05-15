@@ -22,6 +22,14 @@ FragTrap::FragTrap(std::string name) {
 
 FragTrap::FragTrap(const FragTrap& other) {
 	*this = other;
+	this->_hitPoints = other._hitPoints;
+	this->_energyPoints = other._energyPoints;
+	this->_maxHitPoints = other._maxHitPoints;
+	this->_maxEnergyPoints = other._maxEnergyPoints;
+	this->_level = other._level;
+	this->_meleeDamage = other._meleeDamage;
+	this->_rangedDamage = other._rangedDamage;
+	this->_armor = other._armor;
 }
 
 FragTrap::~FragTrap() {
@@ -30,6 +38,14 @@ FragTrap::~FragTrap() {
 
 FragTrap&	FragTrap::operator =(const FragTrap& other) {
 	this->_name = other._name;
+	this->_hitPoints = other._hitPoints;
+	this->_energyPoints = other._energyPoints;
+	this->_maxHitPoints = other._maxHitPoints;
+	this->_maxEnergyPoints = other._maxEnergyPoints;
+	this->_level = other._level;
+	this->_meleeDamage = other._meleeDamage;
+	this->_rangedDamage = other._rangedDamage;
+	this->_armor = other._armor;
 	return *this;
 }
 
