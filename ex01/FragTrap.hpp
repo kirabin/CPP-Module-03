@@ -5,20 +5,16 @@
 # include <cstdlib>
 # include <ctime>
 
-using std::string;
-using std::cout;
-using std::endl;
-
 class FragTrap {
 
 	public:
-		FragTrap(string name);
+		FragTrap(std::string name);
 		FragTrap(const FragTrap& other);
 		~FragTrap();
 
 		FragTrap&	operator =(const FragTrap& other);
-		void		rangedAttack(const string& target) const;
-		void		meleeAttack(const string& target) const;
+		void		rangedAttack(const std::string& target) const;
+		void		meleeAttack(const std::string& target) const;
 		void		vaulthunter_dot_exe(std::string const & target);
 		void		takeDamage(unsigned int amount);
 		void		beRepaired(unsigned int amount);
@@ -28,12 +24,12 @@ class FragTrap {
 		unsigned int		_maxHitPoints;
 		unsigned int		_energyPoints;
 		unsigned int		_maxEnergyPoints;
-		int		_level;
-		string	_name;
-		int		_meleeDamage;
-		int		_rangedDamage;
-		int		_armor;
-		static string messages[5];
+		int					_level;
+		std::string			_name;
+		int					_meleeDamage;
+		int					_rangedDamage;
+		int					_armor;
+		static std::string	messages[5];
 };
 
 #endif

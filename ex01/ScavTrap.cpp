@@ -1,6 +1,6 @@
 #include "ScavTrap.hpp"
 
-string ScavTrap::challenges[5] = {
+std::string ScavTrap::challenges[5] = {
 	"Let's see that're you made of!",
 	"Get ready!",
 	"Aaaaaargh!",
@@ -8,7 +8,7 @@ string ScavTrap::challenges[5] = {
 	"Wait a sec. let me try something."
 };
 
-ScavTrap::ScavTrap(string name) {
+ScavTrap::ScavTrap(std::string name) {
 	this->_name = name;
 	this->_hitPoints = 100;
 	this->_maxHitPoints = 100;
@@ -33,45 +33,45 @@ ScavTrap&	ScavTrap::operator =(const ScavTrap& other) {
 	return *this;
 }
 
-void		ScavTrap::rangedAttack(const string& target) const {
-	cout << "SC4V-TP " <<  this->_name;
-	cout << " attacks " << target << " at range, ";
-	cout << "causing " << this->_rangedDamage << " points of damage!" << endl;
+void		ScavTrap::rangedAttack(const std::string& target) const {
+	std::cout << "SC4V-TP " <<  this->_name;
+	std::cout << " attacks " << target << " at range, ";
+	std::cout << "causing " << this->_rangedDamage << " points of damage!" << std::endl;
 }
 
-void		ScavTrap::meleeAttack(const string& target) const {
-	cout << "SC4V-TP " <<  this->_name;
-	cout << " attacks " << target << " at melee, ";
-	cout << "causing " << this->_meleeDamage << " points of damage!" << endl;
+void		ScavTrap::meleeAttack(const std::string& target) const {
+	std::cout << "SC4V-TP " <<  this->_name;
+	std::cout << " attacks " << target << " at melee, ";
+	std::cout << "causing " << this->_meleeDamage << " points of damage!" << std::endl;
 }
 
 void		ScavTrap::challengeNewcomer() const {
-	cout << this->challenges[rand() % 5] << endl;
+	std::cout << this->challenges[rand() % 5] << std::endl;
 }
 
 void		ScavTrap::takeDamage(unsigned int amount) {
-	cout << "SC4V-TP " <<  this->_name;
+	std::cout << "SC4V-TP " <<  this->_name;
 	if (amount > this->_hitPoints) {
-		cout << " got " << this->_hitPoints << " damage.";
+		std::cout << " got " << this->_hitPoints << " damage.";
 		this->_hitPoints = 0;
 	}
 	else {
-		cout << " got " << amount << " damage.";
+		std::cout << " got " << amount << " damage.";
 		this->_hitPoints -= amount;
 	}
-	cout << endl << "\tHealth: " << this->_hitPoints << endl;
+	std::cout << std::endl << "\tHealth: " << this->_hitPoints << std::endl;
 }
 
 void		ScavTrap::beRepaired(unsigned int amount) {
-	cout << "SC4V-TP " <<  this->_name;
-	cout << " repaired ";
+	std::cout << "SC4V-TP " <<  this->_name;
+	std::cout << " repaired ";
 	if (amount + this->_hitPoints > this->_maxHitPoints) {
-		cout << this->_maxHitPoints - this->_hitPoints << " health.";
+		std::cout << this->_maxHitPoints - this->_hitPoints << " health.";
 		this->_hitPoints = this->_maxHitPoints;
 	}
 	else {
-		cout << amount << " health.";
+		std::cout << amount << " health.";
 		this->_hitPoints += amount;
 	}
-	cout << endl << "\tHealth: " << this->_hitPoints << endl;
+	std::cout << std::endl << "\tHealth: " << this->_hitPoints << std::endl;
 }

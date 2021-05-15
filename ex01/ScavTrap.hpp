@@ -5,20 +5,16 @@
 # include <cstdlib>
 # include <ctime>
 
-using std::string;
-using std::cout;
-using std::endl;
-
 class ScavTrap {
 
 	public:
-		ScavTrap(string name);
+		ScavTrap(std::string name);
 		ScavTrap(const ScavTrap& other);
 		~ScavTrap();
 
 		ScavTrap&	operator =(const ScavTrap& other);
-		void		rangedAttack(const string& target) const;
-		void		meleeAttack(const string& target) const;
+		void		rangedAttack(const std::string& target) const;
+		void		meleeAttack(const std::string& target) const;
 		void		challengeNewcomer() const;
 		void		takeDamage(unsigned int amount);
 		void		beRepaired(unsigned int amount);
@@ -29,11 +25,11 @@ class ScavTrap {
 		unsigned int		_energyPoints;
 		unsigned int		_maxEnergyPoints;
 		int		_level;
-		string	_name;
+		std::string	_name;
 		int		_meleeDamage;
 		int		_rangedDamage;
 		int		_armor;
-		static string challenges[5];
+		static std::string challenges[5];
 };
 
 #endif
