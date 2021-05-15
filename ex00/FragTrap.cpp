@@ -1,14 +1,14 @@
 #include "FragTrap.hpp"
 
-string FragTrap::messages[5] = {
+std::string FragTrap::messages[5] = {
 	"I'm murloc, I'm death! ",
 	"Lerooooooy Jeeeenkins! ",
 	"Aaaaaargh! ",
-	"I'll feast on your OIL! ",
+	"I'll feast on your OILS! ",
 	"Pew-pew. "
 };
 
-FragTrap::FragTrap(string name) {
+FragTrap::FragTrap(std::string name) {
 	this->_name = name;
 	this->_hitPoints = 100;
 	this->_energyPoints = 100;
@@ -21,70 +21,68 @@ FragTrap::FragTrap(string name) {
 }
 
 FragTrap::FragTrap(const FragTrap& other) {
-	*this = other;
+	this->_name = other._name;
 }
 
-FragTrap::~FragTrap() {
-
-}
+FragTrap::~FragTrap() {}
 
 FragTrap&	FragTrap::operator =(const FragTrap& other) {
 	this->_name = other._name;
 	return *this;
 }
 
-void		FragTrap::rangedAttack(const string& target) const {
-	cout << "FR4G-TP " <<  this->_name;
-	cout << " attacks " << target << " at range, ";
-	cout << "causing " << this->_rangedDamage << " points of damage!" << endl;
+void		FragTrap::rangedAttack(const std::string& target) const {
+	std::cout << "FR4G-TP " <<  this->_name;
+	std::cout << " attacks " << target << " at range, ";
+	std::cout << "causing " << this->_rangedDamage << " points of damage!" << std::endl;
 }
 
-void		FragTrap::meleeAttack(const string& target) const {
-	cout << "FR4G-TP " <<  this->_name;
-	cout << " attacks " << target << " at melee, ";
-	cout << "causing " << this->_meleeDamage << " points of damage!" << endl;
+void		FragTrap::meleeAttack(const std::string& target) const {
+	std::cout << "FR4G-TP " <<  this->_name;
+	std::cout << " attacks " << target << " at melee, ";
+	std::cout << "causing " << this->_meleeDamage << " points of damage!" << std::endl;
 }
 
-void		FragTrap::vaulthunter_dot_exe(const string& target){
+void		FragTrap::vaulthunter_dot_exe(const std::string& target){
 	unsigned int	cost = 25;
 	int	choice = rand() % 2;
 
 	if (this->_energyPoints >= cost) {
 		this->_energyPoints -= cost;
-		cout << this->messages[rand() % 5];
+		std::cout << this->messages[rand() % 5];
 		if (choice)
 			meleeAttack(target);
 		else
 			rangedAttack(target);
 	}
 	else {
-		cout << "Energy is low: " << this->_energyPoints << "/" << cost << endl;
+		std::cout << "Energy is low: " << this->_energyPoints << "/" << cost << std::endl;
 	}
 }
 
 void		FragTrap::takeDamage(unsigned int amount) {
-	cout << "FR4G-TP " <<  this->_name;
+	std::cout << "FR4G-TP " <<  this->_name;
 	if (amount > this->_hitPoints) {
-		cout << " got " << this->_hitPoints << " damage.";
+		std::cout << " got " << this->_hitPoints << " damage.";
 		this->_hitPoints = 0;
 	}
 	else {
-		cout << " got " << amount << " damage.";
+		std::cout << " got " << amount << " damage.";
 		this->_hitPoints -= amount;
 	}
-	cout << endl << "\tHealth: " << this->_hitPoints << endl;
+	std::cout << std::endl << "\tHealth: " << this->_hitPoints << std::endl;
 }
 
 void		FragTrap::beRepaired(unsigned int amount) {
-	cout << "FR4G-TP " <<  this->_name;
-	cout << " repaired ";
+	std::cout << "FR4G-TP " <<  this->_name;
+	std::cout << " repaired ";
 	if (amount + this->_hitPoints > this->_maxHitPoints) {
-		cout << this->_maxHitPoints - this->_hitPoints << " health.";
+		std::cout << this->_maxHitPoints - this->_hitPoints << " health.";
 		this->_hitPoints = this->_maxHitPoints;
 	}
 	else {
-		cout << amount << " health.";
+		std::cout << amount << " health.";
 		this->_hitPoints += amount;
 	}
-	cout << endl << "\tHealth: " << this->_hitPoints << endl;
+	std::cout << std::endl << "\tHealth: " << this->_hitPoints << std::endl;
 }
