@@ -6,22 +6,18 @@
 # include <ctime>
 # include "ClapTrap.hpp"
 
-using std::string;
-using std::cout;
-using std::endl;
-
-class FragTrap : public ClapTrap{
+class FragTrap : virtual public ClapTrap {
 
 	public:
-		FragTrap(string name);
+		FragTrap(std::string name);
 		FragTrap(const FragTrap& other);
-		~FragTrap();
+		virtual ~FragTrap();
 
 		FragTrap&	operator =(const FragTrap& other);
 		void		vaulthunter_dot_exe(std::string const & target);
 
 	private:
-		static string messages[5];
+		static std::string	_messages[5];
 };
 
 #endif

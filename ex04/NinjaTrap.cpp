@@ -1,6 +1,7 @@
 #include "NinjaTrap.hpp"
 
-NinjaTrap::NinjaTrap(string name) : ClapTrap(name) {
+NinjaTrap::NinjaTrap(std::string name) : ClapTrap(name) {
+	this->_model = "NINJ4-TP";
 	this->_name = name;
 	this->_hitPoints = 60;
 	this->_maxHitPoints = 60;
@@ -13,36 +14,50 @@ NinjaTrap::NinjaTrap(string name) : ClapTrap(name) {
 }
 
 NinjaTrap::NinjaTrap(const NinjaTrap& other) : ClapTrap(other._name) {
-	*this = other;
+	this->_model = "NINJ4-TP";
+	this->_name = other._name;
+	this->_hitPoints = other._hitPoints;
+	this->_energyPoints = other._energyPoints;
+	this->_maxHitPoints = other._maxHitPoints;
+	this->_maxEnergyPoints = other._maxEnergyPoints;
+	this->_level = other._level;
+	this->_meleeDamage = other._meleeDamage;
+	this->_rangedDamage = other._rangedDamage;
+	this->_armor = other._armor;
 }
 
-NinjaTrap::~NinjaTrap() {
-
-}
+NinjaTrap::~NinjaTrap() {}
 
 NinjaTrap&	NinjaTrap::operator =(const NinjaTrap& other) {
-	// TODO: why make copy instead of reference?
+	this->_model = "NINJ4-TP";
 	this->_name = other._name;
+	this->_hitPoints = other._hitPoints;
+	this->_energyPoints = other._energyPoints;
+	this->_maxHitPoints = other._maxHitPoints;
+	this->_maxEnergyPoints = other._maxEnergyPoints;
+	this->_level = other._level;
+	this->_meleeDamage = other._meleeDamage;
+	this->_rangedDamage = other._rangedDamage;
+	this->_armor = other._armor;
 	return *this;
 }
 
-
 void		NinjaTrap::ninjaShoebox(ClapTrap& other) {
-	cout << "Attacking " << other.getName() << " with shoebox! Destroying enemie's self esteem!" << endl;
-	other.takeDamage(100);
+	std::cout << "Attacking " << other.getName() << " with shoebox! Destroying enemie's self esteem!" << std::endl;
+	other.takeDamage(this->_meleeDamage);
 }
 
 void		NinjaTrap::ninjaShoebox(FragTrap& other) {
-	cout << "Attacking " << other.getName() << " with shoebox! Destroying enemie's self esteem!" << endl;
-	other.takeDamage(100);
+	std::cout << "Attacking " << other.getName() << " with shoebox! Destroying enemie's self esteem!" << std::endl;
+	other.takeDamage(this->_meleeDamage);
 }
 
 void		NinjaTrap::ninjaShoebox(ScavTrap& other) {
-	cout << "Attacking " << other.getName() << " with shoebox! Destroying enemie's self esteem!" << endl;
-	other.takeDamage(100);
+	std::cout << "Attacking " << other.getName() << " with shoebox! Destroying enemie's self esteem!" << std::endl;
+	other.takeDamage(this->_meleeDamage);
 }
 
 void		NinjaTrap::ninjaShoebox(NinjaTrap& other) {
-	cout << "Attacking " << other.getName() << " with shoebox! Destroying enemie's self esteem!" << endl;
-	other.takeDamage(100);
+	std::cout << "Attacking " << other.getName() << " with shoebox! Destroying enemie's self esteem!" << std::endl;
+	other.takeDamage(this->_meleeDamage);
 }

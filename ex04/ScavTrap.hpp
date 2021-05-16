@@ -6,14 +6,10 @@
 # include <ctime>
 # include "ClapTrap.hpp"
 
-using std::string;
-using std::cout;
-using std::endl;
-
-class ScavTrap : public ClapTrap {
+class ScavTrap : virtual public ClapTrap {
 
 	public:
-		ScavTrap(string name);
+		ScavTrap(std::string name);
 		ScavTrap(const ScavTrap& other);
 		~ScavTrap();
 
@@ -21,7 +17,7 @@ class ScavTrap : public ClapTrap {
 		void		challengeNewcomer() const;
 
 	private:
-		static string challenges[5];
+		static std::string	_challenges[5];
 };
 
 #endif

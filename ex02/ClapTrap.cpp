@@ -56,13 +56,16 @@ void		ClapTrap::meleeAttack(const std::string& target) const {
 
 void		ClapTrap::takeDamage(unsigned int amount) {
 	std::cout << this->_model << " " <<  this->_name;
-	if (amount > this->_hitPoints) {
+	if ((unsigned int)this->_armor >= amount) {
+		std::cout << " Couldn't pierce through armor";
+	}
+	else if (amount - this->_armor > this->_hitPoints) {
 		std::cout << " got " << this->_hitPoints << " damage.";
 		this->_hitPoints = 0;
 	}
 	else {
-		std::cout << " got " << amount << " damage.";
-		this->_hitPoints -= amount;
+		std::cout << " got " << amount - this->_armor << " damage.";
+		this->_hitPoints -= amount - this->_armor;
 	}
 	std::cout << std::endl << "\tHealth: " << this->_hitPoints << std::endl;
 }

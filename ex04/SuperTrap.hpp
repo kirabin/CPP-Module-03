@@ -6,9 +6,9 @@
 class SuperTrap : public FragTrap, public NinjaTrap {
 
 	public:
-		SuperTrap(const string &name);
+		SuperTrap(const std::string &name);
 		SuperTrap(const SuperTrap& other);
-		~SuperTrap();
+		virtual ~SuperTrap();
 
 		SuperTrap&	operator =(const SuperTrap& other);
 
