@@ -25,10 +25,10 @@ class ClapTrap {
 		unsigned int	_maxEnergyPoints;
 		int				_level;
 		std::string		_name;
-		std::string		_model;
 		int				_meleeDamage;
 		int				_rangedDamage;
 		int				_armor;
+		std::string		_model;
 };
 
 #endif

@@ -1,6 +1,6 @@
 #include "FragTrap.hpp"
 
-std::string FragTrap::messages[5] = {
+std::string FragTrap::_messages[5] = {
 	"I'm murloc, I'm death! ",
 	"Lerooooooy Jeeeenkins! ",
 	"Aaaaaargh! ",
@@ -9,6 +9,7 @@ std::string FragTrap::messages[5] = {
 };
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name) {
+	this->_model = "FR4G-TP";
 	this->_name = name;
 	this->_hitPoints = 100;
 	this->_energyPoints = 100;
@@ -21,13 +22,30 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name) {
 }
 
 FragTrap::FragTrap(const FragTrap& other) : ClapTrap(other._name) {
+	this->_model = "FR4G-TP";
 	this->_name = other._name;
+	this->_hitPoints = other._hitPoints;
+	this->_energyPoints = other._energyPoints;
+	this->_maxHitPoints = other._maxHitPoints;
+	this->_maxEnergyPoints = other._maxEnergyPoints;
+	this->_level = other._level;
+	this->_meleeDamage = other._meleeDamage;
+	this->_rangedDamage = other._rangedDamage;
+	this->_armor = other._armor;
 }
 
 FragTrap::~FragTrap() {}
 
 FragTrap&	FragTrap::operator =(const FragTrap& other) {
 	this->_name = other._name;
+	this->_hitPoints = other._hitPoints;
+	this->_energyPoints = other._energyPoints;
+	this->_maxHitPoints = other._maxHitPoints;
+	this->_maxEnergyPoints = other._maxEnergyPoints;
+	this->_level = other._level;
+	this->_meleeDamage = other._meleeDamage;
+	this->_rangedDamage = other._rangedDamage;
+	this->_armor = other._armor;
 	return *this;
 }
 
@@ -37,11 +55,11 @@ void		FragTrap::vaulthunter_dot_exe(const std::string& target){
 
 	if (this->_energyPoints >= cost) {
 		this->_energyPoints -= cost;
-		std::cout << this->messages[rand() % 5];
+		std::cout << this->_messages[rand() % 5];
 		if (choice)
-			meleeAttack(target);
+			this->meleeAttack(target);
 		else
-			rangedAttack(target);
+			this->rangedAttack(target);
 	}
 	else {
 		std::cout << "Energy is low: " << this->_energyPoints << "/" << cost << std::endl;

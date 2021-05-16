@@ -1,6 +1,6 @@
 #include "FragTrap.hpp"
 
-std::string FragTrap::messages[5] = {
+std::string FragTrap::_messages[5] = {
 	"I'm murloc, I'm death! ",
 	"Lerooooooy Jeeeenkins! ",
 	"Aaaaaargh! ",
@@ -66,7 +66,7 @@ void		FragTrap::vaulthunter_dot_exe(const std::string& target){
 
 	if (this->_energyPoints >= cost) {
 		this->_energyPoints -= cost;
-		std::cout << this->messages[rand() % 5];
+		std::cout << this->_messages[rand() % 5];
 		if (choice)
 			meleeAttack(target);
 		else

@@ -1,6 +1,6 @@
 #include "ScavTrap.hpp"
 
-string ScavTrap::challenges[5] = {
+std::string ScavTrap::_challenges[5] = {
 	"Let's see that're you made of!",
 	"Get ready!",
 	"Aaaaaargh!",
@@ -8,8 +8,8 @@ string ScavTrap::challenges[5] = {
 	"Wait a sec. let me try something."
 };
 
-// TODO: how does this consturctor work?
-ScavTrap::ScavTrap(string name) : ClapTrap(name) {
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
+	this->_model = "SC4V-TP";
 	this->_name = name;
 	this->_hitPoints = 100;
 	this->_maxHitPoints = 100;
@@ -22,18 +22,34 @@ ScavTrap::ScavTrap(string name) : ClapTrap(name) {
 }
 
 ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other._name) {
+	this->_model = "SC4V-TP";
 	this->_name = other._name;
+	this->_hitPoints = other._hitPoints;
+	this->_energyPoints = other._energyPoints;
+	this->_maxHitPoints = other._maxHitPoints;
+	this->_maxEnergyPoints = other._maxEnergyPoints;
+	this->_level = other._level;
+	this->_meleeDamage = other._meleeDamage;
+	this->_rangedDamage = other._rangedDamage;
+	this->_armor = other._armor;
 }
 
-ScavTrap::~ScavTrap() {
-
-}
+ScavTrap::~ScavTrap() {}
 
 ScavTrap&	ScavTrap::operator =(const ScavTrap& other) {
 	this->_name = other._name;
+	this->_hitPoints = other._hitPoints;
+	this->_energyPoints = other._energyPoints;
+	this->_maxHitPoints = other._maxHitPoints;
+	this->_maxEnergyPoints = other._maxEnergyPoints;
+	this->_level = other._level;
+	this->_meleeDamage = other._meleeDamage;
+	this->_rangedDamage = other._rangedDamage;
+	this->_armor = other._armor;
+
 	return *this;
 }
 
 void		ScavTrap::challengeNewcomer() const {
-	cout << this->challenges[rand() % 5] << endl;
+	std::cout << this->_challenges[rand() % 5] << std::endl;
 }

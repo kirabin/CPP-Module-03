@@ -29,7 +29,7 @@ class FragTrap {
 		int					_meleeDamage;
 		int					_rangedDamage;
 		int					_armor;
-		static std::string	messages[5];
+		static std::string	_messages[5];
 };
 
 #endif

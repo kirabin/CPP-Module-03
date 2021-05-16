@@ -29,7 +29,7 @@ class ScavTrap {
 		int					_meleeDamage;
 		int					_rangedDamage;
 		int					_armor;
-		static std::string	challenges[5];
+		static std::string	_challenges[5];
 };
 
 #endif

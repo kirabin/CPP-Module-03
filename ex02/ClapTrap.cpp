@@ -1,8 +1,8 @@
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap(std::string name) {
-	this->_name = name;
 	this->_model = "CL4P-TP";
+	this->_name = name;
 	this->_hitPoints = 100;
 	this->_energyPoints = 100;
 	this->_maxHitPoints = 100;
@@ -14,18 +14,36 @@ ClapTrap::ClapTrap(std::string name) {
 }
 
 ClapTrap::ClapTrap(const ClapTrap& other) {
+	this->_model = "CL4P-TP";
 	this->_name = other._name;
+	this->_hitPoints = other._hitPoints;
+	this->_energyPoints = other._energyPoints;
+	this->_maxHitPoints = other._maxHitPoints;
+	this->_maxEnergyPoints = other._maxEnergyPoints;
+	this->_level = other._level;
+	this->_meleeDamage = other._meleeDamage;
+	this->_rangedDamage = other._rangedDamage;
+	this->_armor = other._armor;
 }
 
 ClapTrap::~ClapTrap() {}
 
 ClapTrap&	ClapTrap::operator =(const ClapTrap& other) {
 	this->_name = other._name;
+	this->_hitPoints = other._hitPoints;
+	this->_energyPoints = other._energyPoints;
+	this->_maxHitPoints = other._maxHitPoints;
+	this->_maxEnergyPoints = other._maxEnergyPoints;
+	this->_level = other._level;
+	this->_meleeDamage = other._meleeDamage;
+	this->_rangedDamage = other._rangedDamage;
+	this->_armor = other._armor;
+
 	return *this;
 }
 
 void		ClapTrap::rangedAttack(const std::string& target) const {
-	std::cout << this->_model << " " <<  this->_name;
+	std::cout << _model << " " <<  this->_name;
 	std::cout << " attacks " << target << " at range, ";
 	std::cout << "causing " << this->_rangedDamage << " points of damage!" << std::endl;
 }

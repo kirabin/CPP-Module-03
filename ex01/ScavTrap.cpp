@@ -1,6 +1,6 @@
 #include "ScavTrap.hpp"
 
-std::string ScavTrap::challenges[5] = {
+std::string ScavTrap::_challenges[5] = {
 	"Let's see that're you made of!",
 	"Get ready!",
 	"Aaaaaargh!",
@@ -60,7 +60,7 @@ void		ScavTrap::meleeAttack(const std::string& target) const {
 }
 
 void		ScavTrap::challengeNewcomer() const {
-	std::cout << this->challenges[rand() % 5] << std::endl;
+	std::cout << this->_challenges[rand() % 5] << std::endl;
 }
 
 void		ScavTrap::takeDamage(unsigned int amount) {
