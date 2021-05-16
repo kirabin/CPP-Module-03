@@ -54,7 +54,6 @@ void		ClapTrap::meleeAttack(const std::string& target) const {
 	std::cout << "causing " << this->_meleeDamage << " points of damage!" << std::endl;
 }
 
-
 void		ClapTrap::takeDamage(unsigned int amount) {
 	std::cout << this->_model << " " <<  this->_name;
 	if (amount > this->_hitPoints) {
