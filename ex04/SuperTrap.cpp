@@ -57,3 +57,11 @@ void	SuperTrap::put_properties() {
 	std::cout << this->_rangedDamage << std::endl;
 	std::cout << this->_armor << std::endl;
 }
+
+void SuperTrap::rangedAttack(std::string const &target) const {
+	FragTrap::rangedAttack(target);
+}
+
+void SuperTrap::meleeAttack(std::string const &target) const {
+	NinjaTrap::meleeAttack(target);
+}
