@@ -46,21 +46,21 @@ NinjaTrap&	NinjaTrap::operator =(const NinjaTrap& other) {
 }
 
 void		NinjaTrap::ninjaShoebox(ClapTrap& other) {
-	std::cout << "Attacking " << other.getName() << " with shoebox! Destroying enemie's self esteem!" << std::endl;
+	std::cout << "Attacking " << other.getName() << " with shoebox! Can't clap without roboarms!" << std::endl;
 	other.takeDamage(this->_meleeDamage);
 }
 
 void		NinjaTrap::ninjaShoebox(FragTrap& other) {
-	std::cout << "Attacking " << other.getName() << " with shoebox! Destroying enemie's self esteem!" << std::endl;
+	std::cout << "Attacking " << other.getName() << " with shoebox! Throws it far away!" << std::endl;
 	other.takeDamage(this->_meleeDamage);
 }
 
 void		NinjaTrap::ninjaShoebox(ScavTrap& other) {
-	std::cout << "Attacking " << other.getName() << " with shoebox! Destroying enemie's self esteem!" << std::endl;
+	std::cout << "Attacking " << other.getName() << " with shoebox! Scavenger got scavenged!" << std::endl;
 	other.takeDamage(this->_meleeDamage);
 }
 
 void		NinjaTrap::ninjaShoebox(NinjaTrap& other) {
-	std::cout << "Attacking " << other.getName() << " with shoebox! Destroying enemie's self esteem!" << std::endl;
+	std::cout << "Attacking " << other.getName() << " with shoebox! Not so sneaky as we thought!" << std::endl;
 	other.takeDamage(this->_meleeDamage);
 }

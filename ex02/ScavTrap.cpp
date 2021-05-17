@@ -3,8 +3,8 @@
 std::string ScavTrap::_challenges[5] = {
 	"Let's see that're you made of!",
 	"Get ready!",
-	"Aaaaaargh!",
-	"You wanna fight?!",
+	"Make the way, I'll teach him!",
+	"Wanna fight?!?",
 	"Wait a sec. let me try something."
 };
 
