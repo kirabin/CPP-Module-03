@@ -9,6 +9,7 @@ std::string ScavTrap::_challenges[5] = {
 };
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
+	std::cout << "ScavTrap constructor called" << std::endl;
 	this->_model = "SC4V-TP";
 	this->_name = name;
 	this->_hitPoints = 100;
@@ -22,6 +23,7 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
 }
 
 ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other._name) {
+	std::cout << "ScavTrap destructor called" << std::endl;
 	this->_model = "SC4V-TP";
 	this->_name = other._name;
 	this->_hitPoints = other._hitPoints;

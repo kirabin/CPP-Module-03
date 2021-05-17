@@ -9,6 +9,7 @@ std::string FragTrap::_messages[5] = {
 };
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name) {
+	std::cout << "FragTrap constructor called" << std::endl;
 	this->_model = "FR4G-TP";
 	this->_name = name;
 	this->_hitPoints = 100;
@@ -34,7 +35,9 @@ FragTrap::FragTrap(const FragTrap& other) : ClapTrap(other._name) {
 	this->_armor = other._armor;
 }
 
-FragTrap::~FragTrap() {}
+FragTrap::~FragTrap() {
+	std::cout << "FragTrap destructor called" << std::endl;
+}
 
 FragTrap&	FragTrap::operator =(const FragTrap& other) {
 	this->_name = other._name;

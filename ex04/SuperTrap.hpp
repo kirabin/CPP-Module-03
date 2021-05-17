@@ -10,6 +10,7 @@ class SuperTrap : public FragTrap, public NinjaTrap {
 		SuperTrap(const SuperTrap& other);
 		virtual ~SuperTrap();
 
+		void		put_properties();
 		SuperTrap&	operator =(const SuperTrap& other);
 
 };

@@ -1,6 +1,7 @@
 #include "NinjaTrap.hpp"
 
 NinjaTrap::NinjaTrap(std::string name) : ClapTrap(name) {
+	std::cout << "NinjaTrap constructor called" << std::endl;
 	this->_model = "NINJ4-TP";
 	this->_name = name;
 	this->_hitPoints = 60;
@@ -26,7 +27,9 @@ NinjaTrap::NinjaTrap(const NinjaTrap& other) : ClapTrap(other._name) {
 	this->_armor = other._armor;
 }
 
-NinjaTrap::~NinjaTrap() {}
+NinjaTrap::~NinjaTrap() {
+	std::cout << "NinjaTrap destructor called" << std::endl;
+}
 
 NinjaTrap&	NinjaTrap::operator =(const NinjaTrap& other) {
 	this->_model = "NINJ4-TP";

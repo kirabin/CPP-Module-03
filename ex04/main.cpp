@@ -1,15 +1,19 @@
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
 #include "NinjaTrap.hpp"
+#include "SuperTrap.hpp"
 
 int main()
 {
 	srand(time(NULL));
-	// ScavTrap	scavTrap("Scavoir");
-	// NinjaTrap	ninjaTrap("Ninger");
+	SuperTrap super("SuperMam");
 
-	Su
+	std::cout << std::endl;
 
+	super.put_properties();
+	super.beRepaired(10);
+
+	std::cout << std::endl;
 
 	return 0;
 }

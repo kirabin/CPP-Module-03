@@ -1,6 +1,7 @@
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap(std::string name) {
+	std::cout << "ClapTrap constructor called" << std::endl;
 	this->_model = "CL4P-TP";
 	this->_name = name;
 	this->_hitPoints = 100;
@@ -26,7 +27,9 @@ ClapTrap::ClapTrap(const ClapTrap& other) {
 	this->_armor = other._armor;
 }
 
-ClapTrap::~ClapTrap() {}
+ClapTrap::~ClapTrap() {
+	std::cout << "ClapTrap destructor called" << std::endl;
+}
 
 ClapTrap&	ClapTrap::operator =(const ClapTrap& other) {
 	this->_name = other._name;
