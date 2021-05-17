@@ -10,7 +10,7 @@ class ClapTrap {
 	public:
 		ClapTrap(std::string name);
 		ClapTrap(const ClapTrap& other);
-		virtual ~ClapTrap(); //TODO: why virtual
+		virtual ~ClapTrap();
 
 		ClapTrap&	operator =(const ClapTrap& other);
 		void		rangedAttack(const std::string& target) const;

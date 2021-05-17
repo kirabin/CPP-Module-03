@@ -8,7 +8,7 @@ class SuperTrap : public FragTrap, public NinjaTrap {
 	public:
 		SuperTrap(const std::string &name);
 		SuperTrap(const SuperTrap& other);
-		virtual ~SuperTrap();
+		~SuperTrap();
 
 		void		put_properties();
 		SuperTrap&	operator =(const SuperTrap& other);

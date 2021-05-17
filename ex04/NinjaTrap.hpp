@@ -13,7 +13,7 @@ class NinjaTrap : virtual public ClapTrap {
 	public:
 		NinjaTrap(std::string name);
 		NinjaTrap(const NinjaTrap& other);
-		virtual ~NinjaTrap();
+		~NinjaTrap();
 
 		NinjaTrap&	operator =(const NinjaTrap& other);
 		void		ninjaShoebox(ClapTrap& other);

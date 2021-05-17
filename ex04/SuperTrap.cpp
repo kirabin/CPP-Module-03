@@ -1,6 +1,5 @@
 #include "SuperTrap.hpp"
 
-// TODO: how to call claptrap constructor only once?
 SuperTrap::SuperTrap(const std::string &name) : ClapTrap(name), FragTrap(name), NinjaTrap(name) {
 	std::cout << "SuperTrap constructor called" << std::endl;
 	this->_name = name;
